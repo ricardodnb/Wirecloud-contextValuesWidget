@@ -11,7 +11,10 @@ Installation steps:
 
 Screenshots:  
 ![Dials](https://cloud.githubusercontent.com/assets/6843165/13318528/1f8b4cba-dbb3-11e5-91a6-771904183c92.png)  
-![Text-Info](https://cloud.githubusercontent.com/assets/6843165/13318522/19ad1b70-dbb3-11e5-9603-c99a244d82c7.png)
+![Text-Info](https://cloud.githubusercontent.com/assets/6843165/13318522/19ad1b70-dbb3-11e5-9603-c99a244d82c7.png)  
+
+Notes:  
+In the settings you can change the max value for the widget.
 
 Contacts: ricardogomesdnb@gmail.com / rjpgr@isep.ipp.pt  
 Developed for: Cister EnerGAware project.  
