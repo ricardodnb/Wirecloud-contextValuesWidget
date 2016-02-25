@@ -9,6 +9,9 @@ Installation steps:
 4. Also in the wiring section connect NGSI output to the Widget input.  
 5. If everything goes correctly NGSI Source Proxy should create a subscription with Orion Context Broker and your widget starts getting input everytime the values are updated.  
 
+Screenshots:  
+
+
 Contacts: ricardogomesdnb@gmail.com / rjpgr@isep.ipp.pt  
 Developed for: Cister EnerGAware project.  
 http://www.cister.isep.ipp.pt/
