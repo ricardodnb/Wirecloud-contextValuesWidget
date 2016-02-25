@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+    <widget xmlns="http://wirecloud.conwet.fi.upm.es/ns/macdescription/1" vendor="____" name="SimpleContextDials" version="1.0.2">
+        <details>
+            <title>Current Context Data</title>
+            <email>ricardogomesdnb@gmail.com</email>
+            <description>Showing current context values using inputs from NGSI Source operator.</description>
+            <longdescription>DESCRIPTION.md</longdescription>
+            <authors>ricardogomesdnb@gmail.com;http://bernii.github.io/gauge.js/</authors>
+        </details>
+        <requirements>
+            <feature name="StyledElements" />
+        </requirements>
+        <preferences>
+            <preference name="max-height" type="text" label="Max height (Percentage)" default="60" />
+            <preference name="min-height" type="text" label="Min height (Percentage)" default="10" />
+        </preferences>
+        <wiring>
+            <inputendpoint name="textinput" type="text" label="Input" description="Input" friendcode="dials-content" />
+        </wiring>
+        <contents src="index.html" useplatformstyle="true" />
+        <rendering height="200px" width="400px" />
+    </widget>

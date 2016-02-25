@@ -1,0 +1,18 @@
+html,
+body {
+    margin: 0;
+}
+
+body {
+    color: #222;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+.dialDiv {
+    text-align: center;
+}
+
+.homeSquare {
+    margin: 1% 1% 1% 1%;
+}
