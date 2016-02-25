@@ -13,3 +13,22 @@ Developed for: Cister EnerGAware project.
 http://www.cister.isep.ipp.pt/
 
 Used http://bernii.github.io/gauge.js/ code. All rights in this go the respective author.
+
+Input example:
+var data = [{
+        "id": "EA #002",
+        "type": "Home",
+        "signals": [{
+            "value": "918.6",
+            "type": "number",
+            "modDate": "2016-02-10T10:45:00.000Z",
+            "signalId": "2221",
+            "magnitude": "Volume"
+        }, {
+            "value": "624.741",
+            "type": "number",
+            "modDate": "2016-02-10T10:45:00.000Z",
+            "signalId": "2222",
+            "magnitude": "Active Energy"
+        }]
+    }];

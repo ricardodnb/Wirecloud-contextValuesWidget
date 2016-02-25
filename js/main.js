@@ -19,7 +19,7 @@ var opts = {
     generateGradient: true
 };
 
-/*DUMMY DATAAAAAAAAAAAAAAAAAAAAAAAA TO TEST OUTSIDE OF WIRECLOUD
+//DUMMY DATAAAAAAAAAAAAAAAAAAAAAAAA TO TEST OUTSIDE OF WIRECLOUD, NGSI Source sends this type of data to Widget API input
 var data = [{
         "id": "EA #002",
         "type": "Home",
@@ -98,7 +98,13 @@ var data = [{
     }];
 
 
-var gasValue = 0;
+//For development purpouses
+for (var i = 0; i < data.length; i++) {
+    renderDials(data[i]);
+    renderTextInfo(data[i]);
+}
+
+/*
 var energyValue = 0;
 
 var energyDial = document.getElementById('energyDial'); // your canvas element
@@ -106,14 +112,8 @@ var energyGauge = new Gauge(energyDial).setOptions(opts); // create sexy gauge!
 energyGauge.maxValue = 5000; // set max gauge value
 energyGauge.animationSpeed = 32; // set animation speed (32 is default value)
 energyGauge.setTextField(document.getElementById("energy-textfield"));
-energyGauge.set(energyValue); // set actual value
+energyGauge.set(energyValue); // set actual value*/
 
-var gasDial = document.getElementById('gasDial'); // your canvas element
-var gasGauge = new Gauge(gasDial).setOptions(opts); // create sexy gauge!
-gasGauge.maxValue = 5000; // set max gauge value
-gasGauge.animationSpeed = 32; // set animation speed (32 is default value)
-gasGauge.setTextField(document.getElementById("gas-textfield"));
-gasGauge.set(gasValue); // set actual value*/
 
 //Register callback for use with a NGSI Browser, Wirecloud Widget API
 MashupPlatform.wiring.registerCallback("textinput", function (data) {
@@ -126,9 +126,9 @@ function renderDials(json) {
     try {
         var homeId = json.id;
 
-        var nSignals = json["signals"].length;
+        var nSignals = json.signals.length;
 
-        if (document.getElementById(homeId) != null) {
+        if (document.getElementById(homeId) !== null) {
             $('#' + homeId).empty();
             var homeDiv = $('#' + homeId);
         } else {
@@ -140,8 +140,8 @@ function renderDials(json) {
 
         for (var i = 0; i < nSignals; i++) {
 
-            var magnitude = json["signals"][i].magnitude;
-            var value = json["signals"][i].value;
+            var magnitude = json.signals[i].magnitude;
+            var value = json.signals[i].value;
             var dialDiv = $('<div class="dialDiv col-xs-6"></div>');
             var canvas = document.createElement("canvas");
             var textField = document.createElement("div");
@@ -178,9 +178,9 @@ function renderDials(json) {
 function renderTextInfo(json) {
     try {
         var homeId = json.id;
-        var nSignals = json["signals"].length;
+        var nSignals = json.signals.length;
 
-        if (document.getElementById(homeId) != null) {
+        if (document.getElementById(homeId) !== null) {
             $('#' + homeId).empty();
             var homeDiv = $('#' + homeId);
         } else {
@@ -192,8 +192,8 @@ function renderTextInfo(json) {
         homeDiv.append(header);
 
         for (var i = 0; i < nSignals; i++) {
-            var magnitude = json["signals"][i].magnitude;
-            var value = json["signals"][i].value;
+            var magnitude = json.signals[i].magnitude;
+            var value = json.signals[i].value;
             var boldValue = $("<b></b>").append(value);
             var infoParagraph = $('<h4></h4>').append("Current reading: ");
             infoParagraph.append(boldValue);
