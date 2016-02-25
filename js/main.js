@@ -20,7 +20,7 @@ var opts = {
 };
 
 //DUMMY DATAAAAAAAAAAAAAAAAAAAAAAAA TO TEST OUTSIDE OF WIRECLOUD, NGSI Source sends this type of data to Widget API input
-var data = [{
+/*var data = [{
         "id": "EA #002",
         "type": "Home",
         "signals": [{
@@ -98,11 +98,11 @@ var data = [{
     }];
 
 
-//For development purpouses
+//For development purpouses uncomment dummy data and this loop
 for (var i = 0; i < data.length; i++) {
     renderDials(data[i]);
     renderTextInfo(data[i]);
-}
+}*/
 
 /*
 var energyValue = 0;
@@ -146,14 +146,10 @@ function renderDials(json) {
             var canvas = document.createElement("canvas");
             var textField = document.createElement("div");
 
-            if (magnitude == "Volume") {
-                var unit = document.createTextNode("Signal: " + magnitude);
-            } else {
-                var unit = document.createTextNode("Signal: " + magnitude);
-            }
+            var unit = document.createTextNode("Signal: " + magnitude);
 
             var gauge = new Gauge(canvas).setOptions(opts); // create sexy gauge!
-            gauge.maxValue = 20000; // set max gauge value
+            gauge.maxValue = MashupPlatform.prefs.get("max-value"); // get max value from the widget preferences in config.xml
             gauge.animationSpeed = 32; // set animation speed (32 is default value)
             gauge.setTextField(textField);
             gauge.set(parseFloat(value));
@@ -161,7 +157,6 @@ function renderDials(json) {
             dialDiv.append(textField);
             dialDiv.append(unit);
             homeDiv.append(dialDiv);
-
         }
 
         $('#default-info').empty();
